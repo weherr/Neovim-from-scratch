@@ -55,7 +55,7 @@ nvim_tree.setup {
     },
   },
   view = {
-    width = 30,
+    width = 50,
     side = "left",
     mappings = {
       list = {
@@ -67,4 +67,8 @@ nvim_tree.setup {
   },
 }
 
-
+-- automatically open file on creation
+local api = require("nvim-tree.api")
+api.events.subscribe(api.events.Event.FileCreated, function(file)
+  vim.cmd("edit " .. file.fname)
+end)

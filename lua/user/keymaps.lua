@@ -55,6 +55,12 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("i", "jj", "<ESC>", opts)
 keymap("i", "kk", "<ESC>", opts)
 
+-- easy go to end of line
+keymap("i", "AA", "<C-o>A", opts)
+keymap("i", "II", "<C-o>I", opts)
+keymap("i", "OO", "<C-o>o", opts)
+
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -65,12 +71,16 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
+
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- close buffers
+keymap ("n", "<leader>z", "mH:%bd|e#|bd#<CR>zR'Hzz", opts)
 
 -- Terminal --
 -- Better terminal navigation
