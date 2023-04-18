@@ -81,13 +81,12 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- close buffers
 -- keymap ("n", "<leader>z", "mH:%bd|e#|bd#<CR>zR'Hzz", opts)
-keymap ("n", "<leader>z", ':%bd\\|e#\\|bd#<cr>\\|\'"', opts)
+keymap ("n", "<leader>z", ":%bd|e#|bd#<cr>|'\"", opts)
 
 
 -- console.logs
 keymap ("i", "cll", 'console.log()<Esc><S-f>(a', opts)
-keymap ("n", "<leader>z", 'yiwocll<Esc>p', opts)
-
+keymap ("i", "lrr", 'logger.error()<Esc><S-f>(a', opts)
 
 
 -- Terminal --
